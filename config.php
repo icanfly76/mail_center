@@ -2,9 +2,9 @@
 
 $conf = array(
     'redis' => array(
-        'host' => '10.66.249.184',
+        'host' => '****',
         'port' =>  '6379',
-        'pass' => 'masonmou0987'
+        'pass' => ''
     ),
 
     'access_key' => array(
@@ -18,7 +18,7 @@ $conf = array(
     'mail' => array(
         'host' => 'smtp.qq.com',
         'port' => 25,
-        'username' => '362854025@qq.com',
-        'password' => 'qxjgkyhwdsmzcbee',
+        'username' => '***',
+        'password' => '****',
     ),
 );
