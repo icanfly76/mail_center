@@ -22,7 +22,7 @@ $date = date('Y-m-d',time());
 try {
 	$redis = new Redis();
 	$redis->connect($conf['redis']['host'],$conf['redis']['port'],5);
-	$redis->auth('redis密码');
+	$redis->auth($conf['redis']['pass']);
 	$redis->setOption(Redis::OPT_PREFIX,'mail:');
 } catch(Exception $e) {
 	exit($e->getMessage());

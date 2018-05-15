@@ -32,14 +32,14 @@ if(!in_array($client_ip,$allow_client_ip))
 try {
     $redis = new Redis();
     $redis->connect($conf['redis']['host'],$conf['redis']['port'],5);
-    $redis->auth('***');
+    $redis->auth($conf['redis']['pass']);
     $redis->setOption(Redis::OPT_PREFIX,'mail:');
 } catch(Exception $e) {
     exit($e->getMessage());
 }
 
 $email = isset($_GET['email'])?$_GET['email']:'';
-$from  = isset($_GET['from'])?$_GET['name']:'发送的邮箱地址';
+$from  = isset($_GET['from'])?$_GET['from']:'';
 $from_name = isset($_GET['from_name'])?$_GET['from_name']:'monitor';
 $name =  isset($_GET['name'])? $_GET['name']:$email;
 $subject = isset($_GET['subject'])?$_GET['subject']:'';
